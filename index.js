@@ -49,9 +49,9 @@ function showIssues(json) {
 function createIssue() {
   const issueTitle = document.getElementById('title').value
    const issueBody = document.getElementById('body').value
- 
+
    const postData = JSON.stringify({title: issueTitle, body: issueBody})
- 
+
    fetch(`${baseApi}/repos/${fork}/issues`, {
      method: 'post',
      headers: {
@@ -82,7 +82,7 @@ function forkRepo() {
      showResults(repo)
    });
  }
- 
+
  function showResults(repoObj) {
    document.getElementById('results').innerHTML = repoObj.template()
 }
